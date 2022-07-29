@@ -1,0 +1,9 @@
+.table {
+  width: fit-content !important;
+  max-width: 100vw!important;
+  min-width: 80vw!important;
+}
+a {
+  color: white;
+  text-underline: none;
+}

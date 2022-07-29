@@ -1,0 +1,18 @@
+<div class="tags-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Select Tag</mat-label>
+    <mat-select (selectionChange)="onSelectTag($event)">
+        <mat-option value="default">Default</mat-option>
+        <mat-option
+        *ngFor="let tag of tagList"
+        [value]="tag.tag">
+        {{tag.tag}}
+      </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+</div>
+<app-single-tag-clip
+  [_tagClipList]="tagClipList"
+></app-single-tag-clip>
+

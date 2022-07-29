@@ -1,0 +1,35 @@
+<div *ngIf="!selectedTickerName">
+  <input
+    #input
+    matInput
+    [formControl]="searchFormField"
+    placeholder="Type to search">
+  <mat-chip-list aria-label="Fish selection">
+    <div class="tickers-list test" >
+      <mat-chip
+        *ngFor="let ticker of tickers|filter:input.value: 'ticker'"
+        (click)="onSelectTicker(ticker.ticker)">
+        {{ticker.ticker}}
+      </mat-chip>
+    </div>
+  </mat-chip-list>
+</div>
+
+<ng-container *ngIf="tickerClips && tickerClips.length && selectedTickerName">
+  <div class="header">
+    <div class="button">
+      <button mat-raised-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+        Go Back
+      </button>
+    </div>
+    <div class="name">
+      <div class="ticker-name">{{selectedTickerName}}</div>
+    </div>
+
+  </div>
+  <app-single-ticker-clips
+    [tickerClips]="tickerClips"
+  >
+  </app-single-ticker-clips>
+</ng-container>

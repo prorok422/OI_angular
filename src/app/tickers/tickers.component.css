@@ -1,0 +1,20 @@
+input{
+  border: solid #9c27b0;
+  max-width: 400px;
+  margin: 10px;
+  height: 30px;
+  color: white;
+}
+
+::ng-deep.mat-chip-list-wrapper {
+    margin: 0!important;
+    justify-content: center;
+}
+.ticker-name {
+    color: white;
+    font-size: 24px;
+    margin: 10px;
+}
+mat-chip {
+    cursor: pointer
+}
